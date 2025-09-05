@@ -8,11 +8,11 @@
 		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jcanare2.cursoapis</groupId>
-	<artifactId>curso-introduccion-apis</artifactId>
+	<groupId>com.jcanare2.api</groupId>
+	<artifactId>api-base-authentication-jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>curso-introduccion-apis</name>
-	<description>CursoApis</description>
+	<name>api-base-authentication-jwt</name>
+	<description>Api Base</description>
 	<url/>
 	<licenses>
 		<license/>
