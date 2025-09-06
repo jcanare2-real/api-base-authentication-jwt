@@ -1,4 +1,4 @@
-package com.jcanare2.api.controller;
+package com.jcanare2.api.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,9 +40,9 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable Long id) {
-        Optional<Usuario> usuarioOpt = usuarioService.getUsuarioById(id);
-        if (usuarioOpt.isPresent()) {
-            return ResponseEntity.ok(usuarioOpt.get());
+        Optional<Usuario> usuario = usuarioService.getUsuarioById(id);
+        if (usuario.isPresent()) {
+            return ResponseEntity.ok(usuario.get());
         } else {
             return ResponseEntity.notFound().build();
         }

@@ -1,4 +1,4 @@
-package com.jcanare2.api.controller;
+package com.jcanare2.api.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
