@@ -37,10 +37,10 @@ public class PermisoController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Permiso> getById(@PathVariable Long id){
 		
-		Optional<Permiso> permiso = permisoService.getById(id);
+		Permiso permiso = permisoService.getById(id);
 		
-		if(permiso.isPresent()) {
-			return ResponseEntity.ok(permiso.get());
+		if(permiso != null) {
+			return ResponseEntity.ok(permiso);
 		} else {
 			return ResponseEntity.notFound().build();
 		}

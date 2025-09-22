@@ -2,6 +2,9 @@ package com.jcanare2.api.dto;
 
 import java.util.Set;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,18 +16,26 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UsuarioCreationRequestDTO {
     
-	@jakarta.validation.constraints.NotBlank
+	@NotBlank
     private String username;
 
-    @jakarta.validation.constraints.NotBlank
+	@NotBlank
     private String password;
 
-    @jakarta.validation.constraints.Email
+    @Email
     private String email;
 
     private Boolean enabled;
 
-    private Long personaId;
+    // Datos de Persona anidados
+    @NotNull
+    private Long documento;
+
+    @NotBlank
+    private String nombres;
+
+    @NotBlank
+    private String apellidos;
 
     private Set<Long> rolIds;
 

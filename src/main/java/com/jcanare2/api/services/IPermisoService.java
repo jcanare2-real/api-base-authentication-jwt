@@ -9,7 +9,7 @@ public interface IPermisoService {
 	
 	public List<Permiso> getAllPermisos();
 	
-	public Optional<Permiso> getById(Long idPermiso);
+	public Permiso getById(Long idPermiso);
 	
 	public Permiso create(Permiso permiso);
 	

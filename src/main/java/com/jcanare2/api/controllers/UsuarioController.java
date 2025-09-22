@@ -49,30 +49,18 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> createUsuario(@Valid @RequestBody UsuarioCreationRequestDTO request) {
-        Usuario usuario = Usuario.builder()
-                .username(request.getUsername())
-                .password(request.getPassword())
-                .email(request.getEmail())
-                .enabled(request.getEnabled())
-                .build();
+    public ResponseEntity<Usuario> createUsuario(@Valid @RequestBody UsuarioCreationRequestDTO usuarioRequest) {
 
-        Usuario created = usuarioService.createUsuario(usuario, request.getPersonaId(), request.getRolIds());
+        Usuario created = usuarioService.createUsuario(usuarioRequest, usuarioRequest.getRolIds());
 
         return ResponseEntity.ok(created);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id,
-                                                 @Valid @RequestBody UsuarioUpdateRequestDTO request) {
-        Usuario usuarioDetails = Usuario.builder()
-                .username(request.getUsername())
-                .password(request.getPassword())
-                .email(request.getEmail())
-                .enabled(request.getEnabled())
-                .build();
+                                                 @Valid @RequestBody UsuarioUpdateRequestDTO usuarioDTO) {
 
-        Usuario updated = usuarioService.updateUsuario(id, usuarioDetails, request.getPersonaId(), request.getRolIds());
+        Usuario updated = usuarioService.updateUsuario(id, usuarioDTO);
         return ResponseEntity.ok(updated);
     }
     
